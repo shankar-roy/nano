@@ -45,3 +45,10 @@ sudo dpkg -i cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb
 sudo apt-key add /var/cuda-repo-10-2-local-10.2.89-440.33.01/7fa2af80.pub
 sudo apt-get update
 sudo apt-get -y install cuda
+
+# Install OpenCV Source
+opencv_ver=3.4.8
+wget https://github.com/opencv/opencv/archive/$opencv_ver.zip -O opencv.zip
+wget https://github.com/opencv/opencv_contrib/archive/$opencv_ver.zip -O opencv_contrib.zip
+
+
