@@ -75,6 +75,9 @@ sudo apt-get install -y libxvidcore-dev libx264-dev
 sudo apt-get install -y libgtk-3-dev
 sudo apt-get install -y libatlas-base-dev gfortran
 
+# To compile OpenCV with gstreamer we will need the following
+sudo apt install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
 cd ~/opencv
 mkdir build
 cd build
