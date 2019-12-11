@@ -44,12 +44,9 @@ nvcc --version
 #  * CUDA GPU architecture 6.2
 #  * NV Power Mode: MAXN - Type: 0
 
-# Output should be something like:
-# - NVIDIA Jetson TX2
-#  * Jetpack 4.2 [L4T 32.1.0]
-#  * CUDA GPU architecture 6.2
-#  * NV Power Mode: MAXN - Type: 0
-
+# Optional: put jetson in high performance mode to speed up things
+sudo nvpmodel -m 0
+sudo jetson_clocks
 
 #Check Python, OpenCV version
 python -c '\
