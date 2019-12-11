@@ -3,6 +3,7 @@
 # Add user to password less sudo
 echo $USER' ALL=(ALL) NOPASSWD:ALL' | sudo tee -a /etc/sudoers > /dev/null
 
+# Update package manager
 sudo apt update -y
 sudo apt upgrade -y
 
@@ -19,9 +20,36 @@ git config --global user.email "shankar.roy@gmail.com"
 sudo apt install python3    
 #Setup Python3 as the default 
 sudo ln -fs /usr/bin/python3 /usr/bin/python
+
+# Install Pip package manager
 sudo apt install -y python3-pip
 pip3 --version
 pip3 install numpy
+
+# Install jetson-stats
+sudo -H pip install jetson-stats
+# Print info about jetson
+jetson_release
+
+#Make sure CUDA is in your PATH! 
+echo 'export PATH=${PATH}:/usr/local/cuda/bin' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda/lib64' >> ~/.bashrc
+source .bashrc
+# Verify, this command should work now
+nvcc --version
+
+# Output should be something like:
+# - NVIDIA Jetson TX2
+#  * Jetpack 4.2 [L4T 32.1.0]
+#  * CUDA GPU architecture 6.2
+#  * NV Power Mode: MAXN - Type: 0
+
+# Output should be something like:
+# - NVIDIA Jetson TX2
+#  * Jetpack 4.2 [L4T 32.1.0]
+#  * CUDA GPU architecture 6.2
+#  * NV Power Mode: MAXN - Type: 0
+
 
 #Check Python, OpenCV version
 python -c '\
