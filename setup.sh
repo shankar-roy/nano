@@ -90,3 +90,14 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D OPENCV_ENABLE_NONFREE=ON \
     -D WITH_GSTREAMER=ON \
     -D BUILD_EXAMPLES=ON ..
+
+make ${nproc}
+sudo make install
+sudo ldconfig
+
+
+
+
+
+
+
