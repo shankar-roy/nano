@@ -13,7 +13,8 @@ sudo swapon /mnt/8GB.swap
 echo '/mnt/8GB.swap  none  swap  sw 0  0' | sudo tee -a /etc/fstab > /dev/null
 
 sudo apt install -y git
-
+git config --global user.name "Shankar Roy"
+git config --global user.email "shankar.roy@gmail.com"
 
 sudo apt install python3    
 #Setup Python3 as the default 
